@@ -1,6 +1,6 @@
 <div class="container my-5">
   <h1 class="mb-3">Employee</h1>
-  <table class="table" *ngIf="employees && employees.length">
+  <table class="table table-bordered" *ngIf="employees && employees.length">
     <thead>
       <tr>
         <th>Id</th>
@@ -8,7 +8,8 @@
         <th>Email</th>
         <th>Phone</th>
         <th>Salary</th>
-        <th>Department</th>
+        <th>Description</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +19,8 @@
         <td>{{ employee.email }}</td>
         <td>{{ employee.phone }}</td>
         <td>{{ employee.salary }}</td>
-        <td>{{employee.department}}</td>
+        <td>{{ employee.description }}</td>
+        <td><a [routerLink]="['/editemployee','edit', employee.id]" class="btn btn-primary m-2 " > View </a></td>
       </tr>
     </tbody>
   </table>
